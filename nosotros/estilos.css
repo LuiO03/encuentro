@@ -1,0 +1,134 @@
+
+
+/*=============== banner ===============*/
+
+.item {
+    height: 50vh;
+    background: url("../img/banners/banner03.jpg")no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.caption {
+    align-items: center;
+}
+
+.titulo_banner, .descripcion_banner{
+    text-align: center;
+    width: 100%;
+}
+
+/*=============== historia ===============*/
+
+.historia_cont{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.historia_texto, .historia_imagenes{
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.historia_texto{
+    background: var(--color_gris);
+    color: var(--color_blanco);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.historia_imagenes{
+    justify-content: space-between;
+}
+
+.historia_img{
+    width: 100%;
+    height: 150px;
+}
+
+.historia_imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/*=============== informacion ===============*/
+
+.valores_cont {
+    display: flex;
+    flex-direction: column;
+    color: var(--color_blanco);
+    background: url("../img/recursos/menu.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.valores_cont::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.valores{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.valor{
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.valor_descripcion{
+    border: 1px solid var(--color_blanco);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*=============== razon ===============*/
+
+.razon_cont{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 90px;
+}
+
+.razon_texto{
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.razon_texto img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.razon{
+    display: flex;
+    gap: 20px;
+}
+
+.razon i{
+    font-size: 50px;
+    color: var(--color_primario);
+}

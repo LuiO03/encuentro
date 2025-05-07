@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.5s ease;
+    background: url('../../img/recursos/login.jpg') no-repeat center center/cover;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+.contenedor {
+    width: 37vw;
+    padding: 50px 30px;
+    height: 100vh;
+    background: rgba(253, 253, 253, 1.0);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.5s ease;
+}
+
+.seccion_titulo{
+    text-align: center;
+}
+
+.seccion_parrafo{
+    text-align: start;
+    color: var(--color_secundario);
+}
+
+.seccion p a{
+    text-decoration: none;
+    color: var(--color_primario);
+    font-weight: bold;
+}
+
+.contenedor_imagen{
+    width: 100%;
+    text-align: center;
+}
+
+.contenedor img{
+    width: 300px;
+}
+
+.seccion_item{
+    text-align: start;
+}
+
+@media (max-width: 868px) {
+
+    body{
+        justify-content: center;
+    }
+    .contenedor {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .contenedor {
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.seccion{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+}
+
+.seccion_info{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.olvido {
+    display: block;
+    text-align: right;
+    margin-bottom: 15px;
+    color: var(--color_secundario);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.enlaces{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.alert ul{
+    list-style: none;
+}
+
+.enlaces a, .enlaces button{
+    flex: 1 1 200px;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px 20px;
+    color: var(--color_blanco);
+    transition: background-color 0.5s ease-in-out;
+    border: 1px solid white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.enlaces a:hover{
+    background-color: var(--color_secundario);
+}
+

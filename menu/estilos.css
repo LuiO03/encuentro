@@ -1,0 +1,479 @@
+/*=============== banner ===============*/
+.item {
+    height: 30vh;
+    background-attachment: fixed;
+}
+
+.caption {
+    align-items: center;
+}
+
+.titulo_banner, .descripcion_banner{
+    text-align: center;
+    width: 100%;
+}
+
+/*=============== buscador ===============*/
+
+.buscador_cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.buscador_wrap {
+    flex: 1 1 300px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.buscador_wrap input{
+    padding: 8px 12px 8px 35px;
+    border: 3px dotted var(--color_primario);
+    border-radius: 0px 5px 5px 0px;
+    background: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 25px;
+}
+
+.buscador_wrap input:hover{
+    border: 3px solid var(--color_primario);
+}
+
+.buscador_wrap input:focus{
+    border: 3px solid var(--color_secundario);
+    outline-color: rgb(0, 255, 255);
+    box-shadow: 0px 0px 10px var(--color_secundario);
+    transition: .1s;
+    transition-property: box-shadow;
+}
+
+.buscador_wrap .icono-busqueda {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 19px;
+}
+
+.buscador_wrap i{
+    color: var(--color_secundario);
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.select_wrap i {
+    color: var(--color_primario);
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.buscador {
+    
+    border: none;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+    background: transparent;
+}
+
+.select_wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 20px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.select_wrap:hover{
+    background: var(--color_secundario);
+    transform: scale(1.01);
+}
+
+.filtro {
+    padding: 12px 0px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+
+.filtro option{
+    color: black;
+    text-align: start;
+}
+
+.filtro option:hover{
+    background-color: var(--color_secundario) !important;
+}
+
+.mensaje-no-productos-general {
+    display: none;
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.tienda_cont{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+    gap: 10px;
+    margin-bottom: 90px;
+}
+
+.tienda_cont article{
+    flex: 1 1 600px;
+}
+
+.acciones_cont{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    max-width: var(--max_width);
+    margin: 0px auto;
+    padding: 50px 20px 30px 20px;
+    width: 100%;
+}
+
+.botones_orden {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton_orden {
+    text-decoration: none;
+    background-color: var(--color_primario);
+    width: fit-content;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: var(--color_blanco);
+    transition: background-color 0.2s ease-in-out;
+    border: 1px solid white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.boton_orden:hover {
+    background-color: black;
+}
+
+.boton_orden.activo {
+    background-color: var(--color_secundario);
+    font-weight: bold;
+}
+
+/*=============== platos ===============*/
+
+.titulo_categoria{
+    font-size: var(--seccion_titulo);
+    font-weight: bolder;
+    margin: 0px;
+    text-align: center;
+}
+
+.menu_seccion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0px 20px 0px;
+    width: 100%;
+    height: fit-content;
+}
+
+#limpiar-busqueda {
+    color: #999;
+    font-size: 18px;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.zoom-out {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.zoom-in {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+
+
+/* ====== producto detalles del plato ====== */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}
+
+::view-transition-old(root) {
+  animation-name: fade-out;
+}
+::view-transition-new(root) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.seccion_plato{
+    background: url("../img/recursos/menu.jpg") no-repeat center center/cover;
+    position: relative;
+    z-index: 0;
+    background-attachment: fixed;
+    padding: 30px 0px;
+}
+
+.seccion_plato::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.cont_plato{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cont_plato section{
+    flex: 1 1 300px;
+}
+
+.producto_detalle_imagen {
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+.detalle_imagen{
+    display: none;
+    background-attachment: fixed;
+    height: 80vh;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.producto_detalle_imagen img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.producto_detalle_container {
+    background-color: white;
+    border-radius: 0px 15px 15px 0px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .producto_detalle_imagen img{
+        border-radius:15px 15px 0px 0px;
+    }
+
+    .producto_detalle_container {
+        border-radius:0px;
+    }
+
+    .producto_detalle_container {
+        height: max-content;
+    }
+}
+
+.titulo_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_info div{
+    display: flex;
+    flex-direction: column;
+}
+
+.producto_detalle_categoria {
+    font-size: 28px;
+    color: var(--color_primario);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.producto_detalle_precio{
+    font-size: 30px;
+    color: var(--color_secundario);
+    font-weight: bold;
+}
+
+.producto_detalle_info{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.producto_detalle_info article{
+    flex: 1 1 600px;
+}
+
+.producto_detalle_nombre {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.producto_detalle_descripcion {
+    font-size: 16px;
+    color: #666;
+}
+
+.producto_lista{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+}
+
+.producto_lista article{
+    flex: 1 1 200px;
+}
+
+.producto_detalle_parte {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.botones_cantidad{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 0px;
+}
+
+.cantidad_numero{
+    width: 20px;
+    text-align: center;
+}
+
+.cantidad_btn{
+    background-color: var(--color_secundario);
+    color: wheat;
+    border-style: none;
+    transform: scale(1);
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+.cantidad_btn:hover{
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.producto_detalle_parte ul{
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+.producto_acciones{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+hr{
+    width: 100%;
+    height: 1px;
+    color: black;
+}
+
+.producto_detalle_parte li {
+    flex: 1 1 200px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.mensaje_info{
+    color: white;
+    background-color: var(--color_secundario);
+    border-radius: 10px;
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.carousel-container{
+    padding: var(--paddingy) 20px 90px 20px;
+}
+
+.precio{
+    color: var(--color_secundario);
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
+}

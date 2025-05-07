@@ -1,0 +1,167 @@
+/*=============== carrito ===============*/
+
+.contenedor-carrito{
+    margin-bottom: 90px;
+    text-align: center;
+    justify-content: center;
+}
+
+.titulo-carrito {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.carrito-vacio {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-carrito th, .tabla-carrito td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.imagen_carrito{
+    width: 150px;
+    aspect-ratio: 1 / 1;
+}
+
+.imagen_carrito img{
+    width: 100%;
+    height: 100%;
+}
+
+.tabla-carrito th {
+    font-weight: bold;
+    border-bottom: 1px solid var(--color_primario);
+}
+
+.tabla-carrito tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Imágenes */
+.imagen-producto {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Input de cantidad */
+.input-cantidad {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botones */
+.btn-eliminar, .btn-detalles{
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 2px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-eliminar {
+    background-color: var(--color_danger);
+    color: #fff;
+}
+
+.btn-eliminar:hover {
+    background: #c0392b;
+}
+
+.btn-detalles {
+    background-color: var(--color_info);
+    color: #fff;
+}
+
+.btn-detalles:hover {
+    background: #2980b9;
+}
+
+.btn-comprar {
+    background: #2ecc71;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-comprar:hover {
+    background: #27ae60;
+}
+
+.btn-volver {
+    background: #95a5a6;
+    color: #fff;
+}
+
+.btn-volver:hover {
+    background: #7f8c8d;
+}
+
+.total-carrito {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+.producto_acciones{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botones_cantidad{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad_numero{
+    width: 30px;
+    text-align: center;
+}
+
+.cantidad_btn{
+    background-color: var(--color_secundario);
+    color: wheat;
+    border-style: none;
+    transform: scale(1);
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+.cantidad_btn:hover{
+    background-color: black;
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 1024px) {
+    .tabla-carrito {
+        display: none;
+    }
+}

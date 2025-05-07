@@ -1,0 +1,218 @@
+
+
+/*=============== banner ===============*/
+
+.item {
+    height: 50vh;
+    background: url("../img/banners/banner02.jpg")no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.caption {
+    align-items: center;
+}
+
+.titulo_banner, .descripcion_banner{
+    text-align: center;
+    width: 100%;
+}
+
+/*=============== formulario ===============*/
+
+/* Contenedor principal */
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contacto article{
+    flex: 1 1 300px;
+}
+
+/* Mapa */
+.contacto_mapa {
+    min-height: 300px;
+    border: 5px solid var(--color_primario);
+    border-radius: 10px;
+}
+
+.contacto_mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.seccion_titulo{
+    text-transform: capitalize;
+}
+
+/* Formulario */
+.contacto_formulario {
+    background: var(--color_gris);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color_blanco);
+}
+
+.contacto_formulario{
+    text-transform: uppercase;
+}
+
+/* Inputs y textarea */
+.contacto_formulario input,
+.contacto_formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--color_secundario);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    field-sizing: content;
+}
+
+/* Efecto al hacer foco en inputs */
+.contacto_formulario input:focus,
+.contacto_formulario textarea:focus {
+    border-color: var(--color_secundario);
+    transform: scale(1.02);
+}
+
+/* Estilos específicos del textarea */
+.contacto_formulario textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Checkbox */
+.form_checkbox {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.form_checkbox input {
+    width: 18px;
+    height: 18px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.form_checkbox input:hover {
+    transform: scale(1.1);
+}
+
+.form_checkbox label {
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.boton_seccion{
+    width: 100%;
+}
+
+.row_seccion_cabecera{
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.row_seccion_cabecera span{
+    width: 40%;
+    text-align: start;
+}
+
+/*=============== informacion ===============*/
+
+hr{
+    max-width: var(--max_width);
+    padding: 0px 20px;
+    margin: 0px auto;
+}
+
+.contacto_contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacto_info,
+.contacto_redes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilo general de los bloques */
+.info_item {
+    flex: 1 1 350px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--color_secundario);
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+/* Ícono */
+.info_item i {
+    font-size: 30px;
+    background: var(--color_negro);
+    color: var(--color_blanco);
+    padding: 15px;
+    border-radius: 50%;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Texto */
+.info_texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_texto .seccion_item {
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+}
+
+.info_texto .seccion_parrafo {
+    font-size: 15px;
+    color: gray;
+    margin-top: 4px;
+}
+.info_texto a.seccion_parrafo {
+    font-size: 15px;
+    color: gray;
+    text-decoration: none;
+    word-break: break-all;
+    margin-top: 4px;
+    transition: color 0.3s;
+}
+
+.info_texto a.seccion_parrafo:hover {
+    color: rgb(0, 162, 255);
+}
+
+.contacto_imagen{
+    width: 80%;
+    margin: 20px auto 90px auto;
+}
+
+.contacto_imagen img{
+    width: 100%;
+}

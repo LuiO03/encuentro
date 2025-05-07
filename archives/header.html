@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro - Restaurant</title>
+    <link rel="icon" href="img/logos/ep_food.png" type="image/png">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/data.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/58fc50b085.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <header>
+        <nav class="navbar">
+            <div class="container_nav">
+                <button id="menu-toggle" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logomenu_container">
+                    <a href="<?php echo $url;?>/index.php" class="logo">
+                        <img src="../img/logos/logo_orange_horizontal.png" alt="logo">
+                    </a>
+                    <ul class="menu">
+                        <li><a >Ver Menú</a></li>
+                        <li><a >Nosotros</a></li>
+                        <li><a >Contactos</a></li>
+                        <li><a >Reservar Mesa</a></li>
+                    </ul>
+                </div>
+                <div class="icons">
+                    <button class="cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+
+                    <?php if ($usuario_logeado): ?>
+                        <div class="user-menu">
+                            <button class="user-btn">
+                                <i class="fas fa-user"></i>
+                                <span>
+                                    <?php echo htmlspecialchars($_SESSION['usuario_nombre'] . ' ' . $_SESSION['usuario_apellido']); ?>
+                                </span>
+                                <i class="fas fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="<?php echo $url;?>/panel/perfil/index.php">
+                                        <i class="fas fa-user"></i> Ver Perfil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $url;?>/panel/pedidos/index.php">
+                                        <i class="fas fa-box"></i> Ver Pedidos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $url;?>/panel/cerrar.php" class="logout">
+                                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    <?php else: ?>
+                        <a class="login-btn" href="<?php echo $url;?>/panel/login.php">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login</span>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <ul id="mobile-menu" class="mobile-menu">
+                <li><a href="<?php echo $url;?>/menu/index.php">Ver Menú</a></li>
+                <li><a href="<?php echo $url;?>/nosotros/index.php">Nosotros</a></li>
+                <li><a href="<?php echo $url;?>/contactos/index.php">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <article class="carrito">
+        <button class="cerrar-carrito">&times;</button>
+        <h2 class="seccion_item">
+            Tu Carrito <span>(3)</span>
+        </h2>
+        <div class="carrito_productos">
+            <article class="producto_info">
+                <a class="producto_img"  href="asdas">
+                    <img src="../img/platos/causa_rellena.jpg" class="imagen-producto" alt="Imagen del producto">
+                </a>
+                <div class="producto_texto">
+                    <h2 class="producto_nombre">
+                        Causa Rellena
+                        <span class="cantidad_numero">(5)</span>
+                    </h2>
+                    <a class="categoria_nombre" href="">
+                        Plato Fuerte
+                    </a>
+                    <div class="seccion_parrafo">
+                        Precio
+                        <div class="borde_precio"></div>
+                        <span>S/.5.20</span>
+                    </div>
+                    <div class="producto_numeros">
+                        <span class="producto_precio">
+                            S/. 5.20
+                        </span>
+                        <button class="eliminar_btn" onclick="eliminarProducto()">Eliminar</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="carrito_subtotal">
+            <span class="subtotal_texto">Total Estimado:</span>
+            <span class="producto_precio_total">S/. 34.23</span>
+        </div>
+        <a class="boton_seccion ancho_completo" href="<?php echo $url;?>/carrito/carrito.php">Finalizar Compra</a>
+    </article>
+    
+    <main>
